@@ -1,9 +1,23 @@
 .header {
-    height: 62px;
-    background-color: #f5f5f5;
+    height: 61px;
+    width: 1840px;
+    margin: 40px auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    border: 1px solid #ccc;
+    justify-content: space-between;
+}
+
+.navList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }

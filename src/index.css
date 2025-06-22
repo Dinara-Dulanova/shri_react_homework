@@ -2,6 +2,8 @@
     --color-bg: rgba(252, 226, 255, 1);
     /* --color-text: #fff; */
     --font-main: 'Inter', sans-serif;
+    width: 100%;
+    height: 100%;
 }
 
 * {
