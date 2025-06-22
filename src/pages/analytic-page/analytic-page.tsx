@@ -1,6 +1,8 @@
 import { DragAndDropArea } from '../../components/drag-and-drop/drag-and-drop'
 import { useStore, type RootStoreState } from '../../store'
 import { HighlightArray } from '../../components/highlight-array/highlight-array'
+import style from './analytic-page.module.css'
+import { Button } from '../../components/button/button'
 
 export const AnalyticPage = () => {
     const file = useStore((store: RootStoreState) => store.file)
@@ -31,7 +33,11 @@ export const AnalyticPage = () => {
     const reset = useStore((store: RootStoreState) => store.reset)
 
     return (
-        <div style={{ maxWidth: 500 }}>
+        <div className={style.container}>
+            <div className={style.description}>
+                Загрузите csv файл и получите полную информацию о нём
+                за сверхнизкое время
+            </div>
             <DragAndDropArea
                 file={file}
                 errorFile={errorFile}
@@ -39,16 +45,33 @@ export const AnalyticPage = () => {
                 onReset={reset}
             />
 
-            {/* {!isLoadingAggregation && <Loader></Loader>} */}
+            <div className={style.center}>
+                <Button
+                    text="Отправить"
+                    property="active"
+                    disabled={
+                        !file || isLoadingAggregation || isSuccessAggregation
+                    }
+                    onClick={startProcessing}
+                ></Button>
+            </div>
 
-            {!isLoadingAggregation && !isSuccessAggregation && file && (
+            {/* <button
+                onClick={startProcessing}
+                style={{ marginBottom: '10px' }}
+                disabled={!file || isLoadingAggregation || isSuccessAggregation}
+            >
+                Отправить
+            </button> */}
+
+            {/* {!isLoadingAggregation && !isSuccessAggregation && file && (
                 <button
                     onClick={startProcessing}
                     style={{ marginBottom: '10px' }}
                 >
                     Отправить
                 </button>
-            )}
+            )} */}
 
             {(isLoadingAggregation || isSuccessAggregation) && latestChunk && (
                 <>

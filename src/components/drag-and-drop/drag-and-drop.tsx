@@ -3,6 +3,7 @@ import { Button } from '../button/button'
 import { ButtonUpload } from '../button-upload/button-upload'
 import { useStore, type RootStoreState } from '../../store'
 import { Loader } from '../loader/loader'
+import style from './drag-and-drop.module.css'
 
 type DragAndDropAreaProps = {
     file: File | null
@@ -92,15 +93,7 @@ export const DragAndDropArea = ({
                 <div
                     onDrop={onDrop}
                     onDragOver={onDragOver}
-                    style={{
-                        padding: '40px',
-                        textAlign: 'center',
-                        cursor: 'pointer',
-                        backgroundColor: '#f9f9f9',
-                        marginBottom: '10px',
-                        border: '2px dashed #888',
-                        borderRadius: '8px',
-                    }}
+                    className={style.drop_area}
                 >
                     {errorFile ? (
                         <>

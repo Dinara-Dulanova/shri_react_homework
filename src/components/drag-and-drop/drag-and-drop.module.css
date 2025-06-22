@@ -1,0 +1,11 @@
+.drop_area {
+    max-width: 1840px;
+    height: 239px;
+    padding: 40px;
+    cursor: pointer;
+    background-color: #eacdff;
+    margin-bottom: 10px;
+    border: 2px dashed #888;
+    border-radius: 8px;
+    text-align: center;
+}

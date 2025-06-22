@@ -1,0 +1,17 @@
+.container {
+    max-width: 1840px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.description {
+    margin: auto;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
