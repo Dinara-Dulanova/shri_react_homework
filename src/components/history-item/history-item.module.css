@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 8px auto;
+    border: 1px solid rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 24pxpx;
+    align-items: center;
+}
+
+.success {
+    color: #2ecc40; /* ярко-зелёный */
+    font-weight: bold;
+    opacity: 1;
+}
+
+.error {
+    color: #ff4136; /* ярко-красный */
+    font-weight: bold;
+    opacity: 1;
+}
+
+.inactive {
+    color: #888;
+    opacity: 0.5; /* полупрозрачный */
+}

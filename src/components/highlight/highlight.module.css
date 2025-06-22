@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px auto;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 24pxpx;
+    align-items: center;
+}
+
+.defaultVariant {
+    background: #ede9ed;
+    font-size: 16px;
+}
+.modalVariant {
+    background: #e4a7e4;
+    font-size: 20px;
+    border: 2px solid #ffe58f;
+}
