@@ -16,9 +16,7 @@ export const App = () => (
             <Route path="generation" element={<GenerationPage />} />
             <Route path="history" element={<HistoryPage />} />
             <Route path="*" element={<NotFoundPage />} />
-            {/* </Route> */}
         </Routes>
-        {/* <ConstructorPage /> */}
     </div>
 )
 

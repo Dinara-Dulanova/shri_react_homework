@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
+# Проект на React + TypeScript + Zustand
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Запустить проект
 
-Currently, two official plugins are available:
+1. Установите зависимости:
+   npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Запустите проект в режиме разработки:
+   npm run dev
 
-## Expanding the ESLint configuration
+3. Откройте в браузере:
+   http://localhost:5173
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-    extends: [
-        // Remove ...tseslint.configs.recommended and replace with this
-        ...tseslint.configs.recommendedTypeChecked,
-        // Alternatively, use this for stricter rules
-        ...tseslint.configs.strictTypeChecked,
-        // Optionally, add this for stylistic rules
-        ...tseslint.configs.stylisticTypeChecked,
-    ],
-    languageOptions: {
-        // other options...
-        parserOptions: {
-            project: ['./tsconfig.node.json', './tsconfig.app.json'],
-            tsconfigRootDir: import.meta.dirname,
-        },
-    },
-})
-```
+## Структура проекта
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-    plugins: {
-        // Add the react-x and react-dom plugins
-        'react-x': reactX,
-        'react-dom': reactDom,
-    },
-    rules: {
-        // other rules...
-        // Enable its recommended typescript rules
-        ...reactX.configs['recommended-typescript'].rules,
-        ...reactDom.configs.recommended.rules,
-    },
-})
-```
+├── public/ # Статические файлы (иконки, index.html и др.)
+├── src/
+│ ├── assets/ # Медиафайлы (изображения, шрифты и т.д.)
+│ ├── components/ # Переиспользуемые React-компоненты
+│ │ ├── app # Главный компонент приложения
+│ │ ├── button
+│ │ ├── button-upload
+│ │ ├── drag-and-drop
+│ │ ├── header
+│ │ ├── highlight
+│ │ ├── highlight-array
+│ │ ├── history-array
+│ │ ├── history-item
+│ │ ├── history-modal
+│ │ ├── history-modal-item
+│ │ ├── loader
+│ │ ├── text
+│ ├── pages/ # Страницы приложения
+│ │ ├── analytic-page # страница дл загрузки и агрегации данных
+│ │ ├── history-page # страница с историей обработки данных и файлов
+│ │ ├── generation-page # стрница с гкенерацией файла
+│ │ ├── not-found-page # страница для 404 (в разработке)
+│ ├── store/ # Zustand-сторы и логика состояния
+│ │ ├── analyze # слайс для работы и агрегации файла
+│ │ ├── generate # слайс для генерации файла
+│ │ ├── index.ts # создание стора и сбор слайсов
+│ ├── ui
+│ ├── utils/ # Вспомогательные функции и утилиты
+│ │ ├── api.ts # апи для работы с бекендом (генерация файла и обработка)
+│ │ ├── functions.ts # вспомогательные функции
+│ │ ├── historyApi.ts # апи для работы с локал стораджем для истории
+│ │ ├── types.ts # используемые типы
+├── package.json # Конфигурация npm-пакетов
+├── tsconfig.json # Конфигурация TypeScript
+└── README.md # Документация проекта
